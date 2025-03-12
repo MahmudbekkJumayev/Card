@@ -1,0 +1,28 @@
+C:\Users\mahmu\Desktop\dotnetOOp\bin\Debug\net8.0\dotnetOOp.exe
+C:\Users\mahmu\Desktop\dotnetOOp\bin\Debug\net8.0\dotnetOOp.deps.json
+C:\Users\mahmu\Desktop\dotnetOOp\bin\Debug\net8.0\dotnetOOp.runtimeconfig.json
+C:\Users\mahmu\Desktop\dotnetOOp\bin\Debug\net8.0\dotnetOOp.dll
+C:\Users\mahmu\Desktop\dotnetOOp\bin\Debug\net8.0\dotnetOOp.pdb
+C:\Users\mahmu\Desktop\dotnetOOp\obj\Debug\net8.0\dotnetOOp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mahmu\Desktop\dotnetOOp\obj\Debug\net8.0\dotnetOOp.AssemblyInfoInputs.cache
+C:\Users\mahmu\Desktop\dotnetOOp\obj\Debug\net8.0\dotnetOOp.AssemblyInfo.cs
+C:\Users\mahmu\Desktop\dotnetOOp\obj\Debug\net8.0\dotnetOOp.csproj.CoreCompileInputs.cache
+C:\Users\mahmu\Desktop\dotnetOOp\obj\Debug\net8.0\dotnetOOp.dll
+C:\Users\mahmu\Desktop\dotnetOOp\obj\Debug\net8.0\refint\dotnetOOp.dll
+C:\Users\mahmu\Desktop\dotnetOOp\obj\Debug\net8.0\dotnetOOp.pdb
+C:\Users\mahmu\Desktop\dotnetOOp\obj\Debug\net8.0\dotnetOOp.genruntimeconfig.cache
+C:\Users\mahmu\Desktop\dotnetOOp\obj\Debug\net8.0\ref\dotnetOOp.dll
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\bin\Debug\net8.0\dotnetOOp.exe
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\bin\Debug\net8.0\dotnetOOp.deps.json
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\bin\Debug\net8.0\dotnetOOp.runtimeconfig.json
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\bin\Debug\net8.0\dotnetOOp.dll
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\bin\Debug\net8.0\dotnetOOp.pdb
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\obj\Debug\net8.0\dotnetOOp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\obj\Debug\net8.0\dotnetOOp.AssemblyInfoInputs.cache
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\obj\Debug\net8.0\dotnetOOp.AssemblyInfo.cs
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\obj\Debug\net8.0\dotnetOOp.csproj.CoreCompileInputs.cache
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\obj\Debug\net8.0\dotnetOOp.dll
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\obj\Debug\net8.0\refint\dotnetOOp.dll
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\obj\Debug\net8.0\dotnetOOp.pdb
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\obj\Debug\net8.0\dotnetOOp.genruntimeconfig.cache
+C:\Users\mahmu\OneDrive\Ishchi stol\dotnetOOp\obj\Debug\net8.0\ref\dotnetOOp.dll
