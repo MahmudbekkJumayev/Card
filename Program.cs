@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Text.Json;
 
 namespace SerializeWays
@@ -32,21 +34,17 @@ namespace SerializeWays
                             AddNewTodo(todos, path);
                             break;
                         case 3:
-                            EditTodo(todos);
+                            EditTodo(todos, path);
                             break;
                         case 4:
-                            DelateTodo(todos,path);
+                            DeleteTodo(todos, path);
                             break;
                         case 5:
                             SearchTodo(todos);
                             break;
-                           
                     }
                 }
             }
-
-
-
         }
 
         static void GetUsersTodo(List<Todo> todos)
@@ -61,7 +59,6 @@ namespace SerializeWays
                 {
                     System.Console.WriteLine($" - {todo.Title}");
                 }
-
             }
 
             System.Console.WriteLine("Bajarilmagan Todolar");
@@ -71,7 +68,6 @@ namespace SerializeWays
                 {
                     System.Console.WriteLine($" - {todo.Title}");
                 }
-
             }
         }
 
@@ -81,12 +77,7 @@ namespace SerializeWays
             int userId = int.Parse(Console.ReadLine()!);
             System.Console.Write("Taskni Kiriting: ");
             string newTitle = Console.ReadLine()!;
-            int newId = 1;
-
-            if (todos.Count > 0)
-            {
-                newId = todos[todos.Count - 1].Id + 1;
-            }
+            int newId = todos.Count > 0 ? todos[todos.Count - 1].Id + 1 : 1;
 
             Todo newTodo = new Todo
             {
@@ -100,48 +91,78 @@ namespace SerializeWays
             File.WriteAllText(path, JsonSerializer.Serialize(todos, new JsonSerializerOptions { WriteIndented = true }));
         }
 
-        static void EditTodo(List<Todo> todos)
+        static void EditTodo(List<Todo> todos, string path)
         {
+            System.Console.Write("O'zgartirmoqchi bo'lgan todo ID sini kiriting: ");
+            int editID = int.Parse(Console.ReadLine()!);
 
+            Todo? todoToEdit = todos.Find(todo => todo.Id == editID);
+
+            if (todoToEdit != null)
+            {
+                System.Console.WriteLine($"Eski sarlavha: {todoToEdit.Title}");
+                System.Console.Write("Yangi sarlavhani kiriting: ");
+                string newTitle = Console.ReadLine()!;
+                if (!string.IsNullOrWhiteSpace(newTitle))
+                {
+                    todoToEdit.Title = newTitle;
+                }
+
+                System.Console.Write($"Hozirgi holati: {(todoToEdit.Completed ? "Bajarilgan" : "Bajarilmagan")}. Holatini almashtirishni xohlaysizmi? (ha/yo'q): ");
+                string changeStatus = Console.ReadLine()!.ToLower();
+                if (changeStatus == "ha")
+                {
+                    todoToEdit.Completed = !todoToEdit.Completed;
+                }
+
+                File.WriteAllText(path, JsonSerializer.Serialize(todos, new JsonSerializerOptions { WriteIndented = true }));
+                System.Console.WriteLine("Todo o'zgartirildi");
+            }
+            else
+            {
+                System.Console.WriteLine("Todo topilmadi!");
+            }
         }
 
-        static void DelateTodo(List<Todo> todos , string path)
+        static void DeleteTodo(List<Todo> todos, string path)
         {
-            System.Console.Write("User Id sini kiriting: ");
+            System.Console.Write("O'chirmoqchi bo'lgan todo ID sini kiriting: ");
             int deleteID = int.Parse(Console.ReadLine()!);
 
-            for (int i = 0; i < todos.Count; i++)
-            {
-                if (todos[i].Id == deleteID)
-                {
-                    todos.RemoveAt(i);
-                    break;
-                }
-            }
+            Todo? todoToRemove = todos.Find(todo => todo.Id == deleteID);
 
-            File.WriteAllText(path, JsonSerializer.Serialize(todos, new JsonSerializerOptions { WriteIndented = true }));
+            if (todoToRemove != null)
+            {
+                todos.Remove(todoToRemove);
+                File.WriteAllText(path, JsonSerializer.Serialize(todos, new JsonSerializerOptions { WriteIndented = true }));
+                System.Console.WriteLine("Todo muvaffaqiyatli o'chirildi!");
+            }
+            else
+            {
+                System.Console.WriteLine("Todo topilmadi!");
+            }
         }
 
         static void SearchTodo(List<Todo> todos)
         {
             System.Console.Write("Todo nomini kiriting: ");
-
             string searchTitle = Console.ReadLine()!.ToLower();
-            List<Todo> searchResult = new List<Todo>();
-            foreach(var todo in todos)
+
+            var searchResults = todos.FindAll(todo => todo.Title.ToLower().Contains(searchTitle));
+
+            if (searchResults.Count > 0)
             {
-                if(todo.Title.ToLower().Contains(searchTitle))
+                System.Console.WriteLine("Natijalar:");
+                foreach (var todo in searchResults)
                 {
-                    searchResult.Add(todo);
+                    System.Console.WriteLine($" - {todo.Title}");
                 }
             }
-
-            foreach(var todo in searchResult)
+            else
             {
-                System.Console.WriteLine(todo.Title);
+                System.Console.WriteLine("Hech narsa topilmadi.");
             }
-
         }
-
     }
+
 }
